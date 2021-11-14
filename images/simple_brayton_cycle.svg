@@ -3,57 +3,52 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 909 404" style="enable-background:new 0 0 909 404;" xml:space="preserve">
 <style type="text/css">
-	.st0{clip-path:url(#SVGID_2_);}
-	.st1{fill:#A5A5A5;stroke:#000000;stroke-width:2.6667;stroke-miterlimit:8;}
-	.st2{fill:#FFFFFF;}
-	.st3{font-family:'ArialMT';}
-	.st4{font-size:24px;}
-	.st5{fill:#4472C4;}
-	.st6{fill:#ED7D31;}
-	.st7{fill:none;stroke:#000000;stroke-width:2.6667;stroke-miterlimit:8;}
-	.st8{fill:#70AD47;}
-	.st9{fill:none;stroke:#4472C4;stroke-width:4;stroke-miterlimit:8;}
-	.st10{fill-rule:evenodd;clip-rule:evenodd;fill:#4472C4;stroke:#000000;stroke-width:2.6667;stroke-miterlimit:8;}
-	.st11{fill-rule:evenodd;clip-rule:evenodd;fill:#ED7D31;stroke:#000000;stroke-width:2.6667;stroke-miterlimit:8;}
-	.st12{fill-rule:evenodd;clip-rule:evenodd;fill:#FFC000;stroke:#000000;stroke-width:2.6667;stroke-miterlimit:8;}
+	.st0{fill:#A5A5A5;stroke:#000000;stroke-width:2.6667;stroke-miterlimit:8;}
+	.st1{fill:#FFFFFF;}
+	.st2{font-family:'ArialMT';}
+	.st3{font-size:20.22px;}
+	.st4{fill:#4472C4;}
+	.st5{fill:#ED7D31;}
+	.st6{fill:none;stroke:#000000;stroke-width:2.6667;stroke-miterlimit:8;}
+	.st7{fill:#70AD47;}
+	.st8{fill:none;stroke:#4472C4;stroke-width:4;stroke-miterlimit:8;}
+	.st9{fill-rule:evenodd;clip-rule:evenodd;fill:#4472C4;stroke:#000000;stroke-width:2.6667;stroke-miterlimit:8;}
+	.st10{fill-rule:evenodd;clip-rule:evenodd;fill:#ED7D31;stroke:#000000;stroke-width:2.6667;stroke-miterlimit:8;}
+	.st11{fill-rule:evenodd;clip-rule:evenodd;fill:#FFC000;stroke:#000000;stroke-width:2.6667;stroke-miterlimit:8;}
 </style>
 <g>
-	<defs>
-		<rect id="SVGID_1_" x="1" y="0" width="909" height="404"/>
-	</defs>
-	<clipPath id="SVGID_2_">
-		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
-	</clipPath>
-	<g transform="translate(-203 -69)" class="st0">
-		<rect x="403.9" y="275.7" class="st1" width="407" height="30"/>
-		<text transform="matrix(1 0 0 1 582.7816 297.2499)" class="st2 st3 st4">shaft</text>
-		<path class="st5" d="M228.9,469.8l0-84h-4l0,84H228.9z M232.9,387.7l-6-12l-6,12H232.9z"/>
-		<path class="st5" d="M400,246.4v-61.2h209.6v4H402l2-2v59.2H400z M521.4,181l12,6l-12,6V181z"/>
-		<path d="M988.9,362.7v85.1h-4v-85.1H988.9z M991.9,445.9l-6,12l-6-12H991.9z"/>
-		<path class="st6" d="M593.3,185.9h219.6v51.2h-4v-49.2l2,2H593.3V185.9z M816.9,235.1l-6,12l-6-12H816.9z"/>
-		<path class="st7" d="M242.9,422.7c0-13.3,10.7-24,24-24c13.3,0,24,10.7,24,24s-10.7,24-24,24C253.6,446.7,242.9,436,242.9,422.7z"
-			/>
-		<text transform="matrix(1 0 0 1 259.4947 430.2499)" class="st3 st4">2</text>
-		<path class="st7" d="M348.9,156.2c0-13.3,10.7-24,24-24s24,10.7,24,24s-10.7,24-24,24S348.9,169.5,348.9,156.2z"/>
-		<text transform="matrix(1 0 0 1 366.0053 162.7499)" class="st3 st4">3</text>
-		<path class="st7" d="M1003.4,437.3c0-13.3,10.7-24,24-24c13.3,0,24,10.7,24,24s-10.7,24-24,24
-			C1014.1,461.3,1003.4,450.5,1003.4,437.3z"/>
-		<text transform="matrix(1 0 0 1 1021.0626 444.7822)" class="st3 st4">5</text>
-		<path class="st7" d="M804.9,150.2c0-13.3,10.7-24,24-24s24,10.7,24,24s-10.7,24-24,24S804.9,163.5,804.9,150.2z"/>
-		<text transform="matrix(1 0 0 1 822.1307 156.7499)" class="st3 st4">4</text>
-		<rect x="987.9" y="275.7" class="st1" width="31" height="30"/>
-		<path class="st8" d="M1018.9,293.7l55.6-0.5l-0.1-6.7l-55.6,0.5L1018.9,293.7z M1071.2,299.9l19.9-10.2l-20.1-9.8L1071.2,299.9z"
-			/>
-		<text transform="matrix(1 0 0 1 1051.4446 426.2499)" class="st3 st4"> </text>
-		<path class="st5" d="M469.4,148.2h53.7v4h-53.7V148.2z M521.1,144.2l12,6l-12,6V144.2z"/>
-		<path class="st9" d="M469.4,150.3l0-55.1"/>
-		<path class="st10" d="M226.9,208.7l177,41v82l-177,41V208.7z"/>
-		<text transform="matrix(1 0 0 1 241.8297 297.2499)" class="st2 st3 st4">Compressor</text>
-		<path class="st11" d="M987.9,372.7l-177-41v-82l177-41V372.7z"/>
-		<text transform="matrix(1 0 0 1 876.9106 297.2499)" class="st2 st3 st4">Turbine</text>
-		<path class="st12" d="M532.9,150.6c0-5.4,4.4-9.8,9.8-9.8H672c5.4,0,9.8,4.4,9.8,9.8v39.3c0,5.4-4.4,9.8-9.8,9.8H542.7
-			c-5.4,0-9.8-4.4-9.8-9.8V150.6z"/>
-		<text transform="matrix(1 0 0 1 553.2116 177.2499)" class="st2 st3 st4">Combustor</text>
+	<g>
+		<g transform="translate(-203 -69)">
+			<rect x="414.8" y="259.5" class="st0" width="342.9" height="25.3"/>
+			<text transform="matrix(1 0 0 1 565.4675 277.698)" class="st1 st2 st3">shaft</text>
+			<path class="st4" d="M267.3,423.1v-70.8H264v70.8H267.3z M270.7,353.9l-5.1-10.1l-5.1,10.1H270.7z"/>
+			<path class="st4" d="M411.5,234.9v-51.6h176.6v3.4H413.2l1.7-1.7v49.9H411.5z M513.8,179.8l10.1,5.1l-10.1,5.1V179.8z"/>
+			<path d="M907.6,332.8v71.7h-3.4v-71.7H907.6z M910.2,402.9l-5.1,10.1l-5.1-10.1H910.2z"/>
+			<path class="st5" d="M574.3,183.9h185V227H756v-41.5l1.7,1.7H574.3V183.9z M762.7,225.3l-5.1,10.1l-5.1-10.1H762.7z"/>
+			<path class="st6" d="M279.1,383.4c0-11.2,9-20.2,20.2-20.2c11.2,0,20.2,9,20.2,20.2c0,11.2-9,20.2-20.2,20.2
+				S279.1,394.6,279.1,383.4z"/>
+			<text transform="matrix(1 0 0 1 293.0978 389.7502)" class="st2 st3">2</text>
+			<path class="st6" d="M368.4,158.9c0-11.2,9-20.2,20.2-20.2s20.2,9,20.2,20.2c0,11.2-9,20.2-20.2,20.2S368.4,170.1,368.4,158.9z"
+				/>
+			<text transform="matrix(1 0 0 1 382.8332 164.3816)" class="st2 st3">3</text>
+			<path class="st6" d="M919.8,395.7c0-11.2,9-20.2,20.2-20.2c11.2,0,20.2,9,20.2,20.2s-9,20.2-20.2,20.2S919.8,406.8,919.8,395.7z"
+				/>
+			<text transform="matrix(1 0 0 1 934.7199 401.9944)" class="st2 st3">5</text>
+			<path class="st6" d="M752.6,153.8c0-11.2,9-20.2,20.2-20.2s20.2,9,20.2,20.2c0,11.2-9,20.2-20.2,20.2S752.6,165,752.6,153.8z"/>
+			<text transform="matrix(1 0 0 1 767.1193 159.3264)" class="st2 st3">4</text>
+			<rect x="906.8" y="259.5" class="st0" width="26.1" height="25.3"/>
+			<path class="st7" d="M932.9,274.7l46.8-0.4l-0.1-5.6l-46.8,0.4L932.9,274.7z M977,279.9l16.8-8.6l-16.9-8.3L977,279.9z"/>
+			<text transform="matrix(1 0 0 1 960.3166 386.3811)" class="st2 st3"> </text>
+			<path class="st4" d="M469.9,152.1h45.2v3.4h-45.2V152.1L469.9,152.1z M513.5,148.8l10.1,5.1l-10.1,5.1V148.8z"/>
+			<path class="st8" d="M469.9,153.9v-46.4"/>
+			<path class="st9" d="M265.6,203.1l149.1,34.5v69.1l-149.1,34.5V203.1z"/>
+			<text transform="matrix(1 0 0 1 278.215 277.698)" class="st1 st2 st3">Compressor</text>
+			<path class="st10" d="M906.8,341.3l-149.1-34.5v-69.1l149.1-34.5V341.3z"/>
+			<text transform="matrix(1 0 0 1 813.2717 277.698)" class="st1 st2 st3">Turbine</text>
+			<path class="st11" d="M523.4,154.1c0-4.5,3.7-8.3,8.3-8.3h108.9c4.5,0,8.3,3.7,8.3,8.3v33.1c0,4.5-3.7,8.3-8.3,8.3H531.7
+				c-4.5,0-8.3-3.7-8.3-8.3V154.1z"/>
+			<text transform="matrix(1 0 0 1 540.5549 176.5979)" class="st1 st2 st3">Combustor</text>
+		</g>
 	</g>
 </g>
 </svg>
