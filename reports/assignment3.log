@@ -34,8 +34,8 @@ power_output = 100 # units: MW
 power_output*=1e6
 
 # Compressor and turbine polytropic efficiencies
-etap_c = 1
-etap_t = 1   
+etap_c = 0.85
+etap_t = 0.90  
 
 # Pressure ratio
 PR = 10
@@ -71,15 +71,15 @@ f_N2 = 0.79
 ########## PART A: ADJUST CODE HERE ##########
 
 # Equivalence ratios    
-phis = [1, None, None] # Set equivalence ratios ranging from 0.4 to 0.8
+phis = [None, None, None] # Set equivalence ratios ranging from 0.4 to 0.8
 
-# Hydrogen percentages
-H2_percentages = [0, None, None] # Set hydrogen volume percentages of the fuel ranging from 0 to 100 
+# Hydrogen percentages by volume of fuel
+H2_percentages = [None, None, None] # Set hydrogen volume percentages of the fuel ranging from 0 to 100 
 
 ################# END PART A ##################
 
 # Define colors to make distinction between different mixtures based on hydrogen percentage
-colors = cm.rainbow(np.linspace(0, 1, len(H2_percentages)))
+colors = cm.viridis(np.linspace(0, 1, len(H2_percentages)))
 
 #%% Premixed flame object
 class mixture_class:
@@ -115,12 +115,12 @@ class mixture_class:
         check_air = f_O2 + f_N2
         check_fuel = self.f_H2 + self.f_CH4
         
-        if check_air == 1.0 and round(check_fuel,3) == 1.0:
+        if check_air == 1.0 and round(check_fuel, 3) == 1.0:
             pass
         else:
             sys.exit("fuel or air composition is incorrect!")
             
-        if round(check_fuel,3) == 1.0:
+        if round(check_fuel, 3) == 1.0:
             pass
         else:
             sys.exit("fuel composition is incorrect!")
@@ -175,8 +175,7 @@ class mixture_class:
         flame.solve(loglevel=0, auto=True)
         
         # Result 1: Laminar flame speed
-        self.S_L0 = flame.velocity[0]*100 # units: cm.s^-1 
-        self.S_T = 10*self.S_L0/100 # units: m.s^-1 Rough estimation of the turbulent flame speed
+        self.S_L0 = flame.velocity[0]*100 # units: cm.s^-1
         
         # Result 2: Adiabtaic flame temperature
         self.T_ad = self.gas.T
@@ -237,8 +236,8 @@ for phi in phis:
         
         # Compressor stage 
         # Temperature after compressor stage
-        T3 = 293.15 #None # units: K  
-        p3 = 101325 #None # units: Pa
+        T3 = None # units: K  
+        p3 = None # units: Pa
         
         # Combustor inlet temperature in K and pressure in Pa
         T_u = T3 # units: K 
@@ -270,7 +269,14 @@ for phi in phis:
         
         ################# END PART C ##################
         
-        print('mixture solved: phi=' + str(phi) + ', H2%=' + str(H2_percentage))
+        print('Mixture solved: phi=' + str(phi) + ', H2%=' + str(H2_percentage))
+        
+        print('Laminar flame speed = ' + str(round(mixture.S_L0, 2)) + ' cm/s')
+        
+        print('Adiabtic flame temperature = ' + str(round(mixture.T_ad, 2)) + ' K')
+        
+        print('------------------------------------------------------')
+        
         
 #%% Plots A: Laminar flame speed/adiabatic flame temperture vs equivalence ratio
 plt.close('all')
@@ -288,7 +294,7 @@ ax1.set_xlabel(r'$\phi$ [-]', fontsize=fontsize)
 ax1.set_ylabel(r'$S_L$ [cm.s$^{-1}$]', fontsize=fontsize)
 ax1.set_xlim(0.3, 1.1)
 ax1.set_ylim(0, 250)
-ax1.set_title('Laminar flame speed vs. equivalence ratio \n $T_u=$' + str(round(T_u,2)) + ' K, $p_u$=' + str(p_u*1e-5) + ' bar')
+ax1.set_title('Laminar flame speed vs. equivalence ratio \n $T_u=$' + str(round(T_u, 2)) + ' K, $p_u$=' + str(p_u*1e-5) + ' bar')
 ax1.grid()
 
 # Figure 2: Adiabatic flame temperature vs equivalence ratio
@@ -298,7 +304,7 @@ ax2.set_ylabel(r'$T_{ad}$ [K]', fontsize=fontsize)
 ax2.set_xlim(0.3, 1.1)
 ax2.set_ylim(1200, 2800)
 ax2.grid()
-ax2.set_title('Adiabtic flame temperature vs. equivalence ratio \n $T_u=$' + str(round(T_u,2)) + ' K, $p_u$=' + str(p_u*1e-5) + ' bar')
+ax2.set_title('Adiabtic flame temperature vs. equivalence ratio \n $T_u=$' + str(round(T_u, 2)) + ' K, $p_u$=' + str(p_u*1e-5) + ' bar')
 
 # Initialize list for laminar flame speeds
 S_L0_lists = [[] for i in range(len(H2_percentages))]
@@ -330,13 +336,13 @@ else:
         # Create new array for phi
         phis_fit = np.linspace(phis[0], phis[-1])
         
-        # Plot 4th order polynomial fit for laminar flame speed 
+        # Plot 3th order polynomial fit for laminar flame speed 
         coeff_S_L0 = np.polyfit(phis, S_L0, poly_order)
         poly_S_L0 = np.poly1d(coeff_S_L0)
         S_L0_fit = poly_S_L0(phis_fit)
         ax1.plot(phis_fit, S_L0_fit, ls="--", c=color)
         
-        # Plot 4th order polynomial fit for adiabatic flame temperature 
+        # Plot 3th order polynomial fit for adiabatic flame temperature 
         coeff_T_ad = np.polyfit(phis, T_ad, poly_order)
         poly_T_ad = np.poly1d(coeff_T_ad)
         T_ad_fit = poly_T_ad(phis_fit)
@@ -428,7 +434,7 @@ ax4.set_ylabel(r'$CO_2$ reduction [%]', fontsize=fontsize)
 ax4.set_title(r'$CO_2$ emissions vs. hydrogen/methane fuel blends (heat input %)')
 ax4.grid()
 
-fig5, (ax5, ax5_1) = plt.subplots(2)
+fig5, (ax5, ax5_1) = plt.subplots(2, figsize=(1.5*6.40, 1.5*4.80))
 ax5.plot(H2_percentage_volume, CO2_percentage, marker=marker)
 ax5.set_xticks(x_ticks)
 ax5.set_yticks(y_ticks)
@@ -438,12 +444,11 @@ ax5.set_title(r'$CO_2$ emissions vs. hydrogen/methane fuel blends (volume %)')
 ax5.grid()
 
 for i, mixture in enumerate(mixtures):
-    if mixture.phi == phis[-1]:
-        NO_percentage_volume = mixture.X_NO*100
-        NO2_percentage_volume = mixture.X_NO2*100
-        ax5_1.bar(mixture.H2_percentage, NO_percentage_volume, bin_width, color='tab:red', label=r'$NO$' if i == 0 else "")
-        ax5_1.bar(mixture.H2_percentage, NO2_percentage_volume, bin_width, bottom=NO_percentage_volume, color='tab:blue', label=r'$NO_2$' if i == 0 else "")
-        ax5_1.set_title(r'$NO_x$ emissions for $\phi=$' + str(mixture.phi))
+    NO_percentage_volume = mixture.X_NO*100
+    NO2_percentage_volume = mixture.X_NO2*100
+    NOX_percentage_volume = NO_percentage_volume + NO2_percentage_volume
+    ax5_1.plot(mixture.H2_percentage, NOX_percentage_volume, ls=linestyle,  marker=marker, ms=markersize, label=r'$\phi$=' + str(mixture.phi) + ', $H_2$%=' + str(mixture.H2_percentage))
+    ax5_1.set_title(r'$NO_x$ emissions for different mixtures')
         
 ax5_1.set_xlim(-5, 105)
 ax5_1.set_xticks(x_ticks)
@@ -509,7 +514,7 @@ for mixture in mixtures:
     f_H2 = mixture.f_H2
     f_CH4 = mixture.f_CH4
     
-    # Specific heat capacity (heat capacity per unit mass)
+    # Specific heat capacity of turbine (heat capacity per unit mass)
     cp_t = mixture.cp_b
     
     # Total mass flow rate
@@ -522,7 +527,7 @@ for mixture in mixtures:
     A = None # units: m^2
     D = None # units: m
     
-    # ratio of mass fuel and mass air at stoichiometric conditions
+    # Ratio of mass fuel and mass air at stoichiometric conditions
     m_f_over_m_a_stoich = None
     
     # Mass flow of the fuel
@@ -531,17 +536,18 @@ for mixture in mixtures:
     # Heat input or Heat of combustion
     Q = None # units: W
     
-    # thermal cycle efficiency
+    # Thermal cycle efficiency
     eta_cycle = None
 
-    
+    print('Mixture: phi=' + str(mixture.phi) + ', H2%=' + str(mixture.H2_percentage))
+    print('------------------------------------------------------')
 ################# END PART D ##################
 
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m/tmp/ipykernel_1794/2053359929.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_1775/3769396994.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      1[0m [0;31m#%% Load required packages[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      2[0m [0;32mimport[0m [0msys[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 3[0;31m [0;32mimport[0m [0mcantera[0m [0;32mas[0m [0mct[0m[0;34m[0m[0;34m[0m[0m

@@ -285,20 +285,21 @@ One of the challenges focuses on the use of hydrogen as a fuel in gas turbines.<
 <div class="section" id="diameter-of-the-combustor">
 <h3>Diameter of the combustor<a class="headerlink" href="#diameter-of-the-combustor" title="Permalink to this headline">¶</a></h3>
 <p>A gas turbine has a power output of 100 MW. The combustion section consists of 8 can combustors. Each can combustor is, for the sake of simplicty, represented by a tube with a diameter <span class="math notranslate nohighlight">\(D\)</span>.<br>
-Consider the simple Brayton cycle illustrated below. The inlet temperature <span class="math notranslate nohighlight">\(T_2\)</span> of the compressor is 293 K and the inlet pressure <span class="math notranslate nohighlight">\(p_2\)</span> is 101325 Pa. To prevent damage of the turbine blades a turbine inlet temperature (TIT) of 1800 K is desired. Furthermore, assume that the specific heat of the fluid is constant through the compressor, i.e. specific heat capacity <span class="math notranslate nohighlight">\(c_{p,c}\)</span>=1.4 and a heat capacity ratio <span class="math notranslate nohighlight">\(\gamma_c\)</span>=1.4. The polytropic efficiency of the compressor and turbine are 0.85 and 0.90, respectively.</p>
-<p>The pressure ratio over the compressor will depend on your studentID:</p>
+Consider the simple Brayton cycle illustrated below. The inlet temperature <span class="math notranslate nohighlight">\(T_2\)</span> of the compressor is 293 K and the inlet pressure <span class="math notranslate nohighlight">\(p_2\)</span> is 101325 Pa. To prevent damage of the turbine blades a turbine inlet temperature (TIT) of 1800 K is desired. Furthermore, assume that the specific heat of the fluid is constant through the compressor, i.e. specific heat capacity <span class="math notranslate nohighlight">\(c_{p,c}\approx 1005 \frac{J}{kgK}\)</span> and a heat capacity ratio <span class="math notranslate nohighlight">\(\gamma_c\)</span>=1.4. The polytropic efficiency of the compressor and turbine are 0.85 and 0.90, respectively.</p>
+<p>The pressure ratio over the compressor (and turbine) will depend on your studentID:</p>
 <p>PR = 10 if (numpy.mod(studentID, 2) + 1) == 1<br>
 PR = 20 if (numpy.mod(studentID, 2) + 1) == 2</p>
 <p>Assume the TIT to be equal to the temperature of the flame inside the combustor. The flame temperature depends on the equivalence ratio (<span class="math notranslate nohighlight">\(\phi\)</span>), the hydrogen volume percentage of the fuel (<span class="math notranslate nohighlight">\(H_2\%\)</span>) and the combustor inlet temperature and pressure. For now consider the fuel to consist of pure natural gas (<span class="math notranslate nohighlight">\(H_2\%=0\)</span>). Note that the equivalence ratio is given by:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-69b93c64-866a-4547-90a2-6b6d412ee62a">
-<span class="eqno">()<a class="headerlink" href="#equation-69b93c64-866a-4547-90a2-6b6d412ee62a" title="Permalink to this equation">¶</a></span>\[\begin{align}
-\phi = \frac{\frac{m_{fuel}}{m_{air}}}{(\frac{m_{fuel}}{m_{air}})_{stoich}}
+<div class="amsmath math notranslate nohighlight" id="equation-875a30e1-e4a4-4f32-a9cc-f8b3cd7cd0f7">
+<span class="eqno">()<a class="headerlink" href="#equation-875a30e1-e4a4-4f32-a9cc-f8b3cd7cd0f7" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\phi = \frac{\frac{m_{fuel}}{m_{air}}}{(\frac{m_{fuel}}{m_{air}})_{stoich}} = \frac{\frac{n_{fuel}}{n_{air}}}{(\frac{n_{fuel}}{n_{air}})_{stoich}}
 \end{align}\]</div>
+<p>Furthermore, assume the mass flow to be constant throughout the cycle.</p>
 <p><img alt="assignment3_cycle" src="_images/assignment3_cycle.svg" /></p>
 <p><strong>1. Calculate the inlet temperature <span class="math notranslate nohighlight">\(T_3\)</span> and inlet pressure <span class="math notranslate nohighlight">\(p_3\)</span> of the combustor and determine the required equivalence ratio (adjust PART A and PART B and run the code), so that the TIT specification is met.</strong> <br></p>
 <p>Inside the combustor the flow is turbulent. Turbulence causes an increase in the flame speed, so that the turbulent flame speed <span class="math notranslate nohighlight">\(S_T \approx 10 S_L\)</span>.</p>
-<p><strong>2. With the equivalence ratio determined in the previous question, calculate the total mass flow rate (<span class="math notranslate nohighlight">\(\dot{m}_{tot}\)</span>) through the gas turbine and the maximal diameter <span class="math notranslate nohighlight">\(D\)</span> of a single combustor tube, so that flashback is prevented. Adjust PART A, PART B, PART C and PART D in the code and run it again. Report the steps you have taken. <br>
-Is there also a minimum diameter? If so, no calculation required, discuss what could be the reason for the necessity of a minimal diameter of the combustor tube.</strong></p>
+<p><strong>2. Calculate <span class="math notranslate nohighlight">\(T_5\)</span> and find the total mass flow rate (<span class="math notranslate nohighlight">\(\dot{m}_{tot}\)</span>) through the gas turbine. For this total mass flow rate find the maximal diameter <span class="math notranslate nohighlight">\(D\)</span> of a single combustor tube, so that flashback is prevented. Adjust PART A, PART B, PART C and PART D in the code and run it again. Report the steps you have taken and the assumptions you made. <br>
+Is there also a minimum diameter? If so, discuss what could be the reason for the necessity of a minimal diameter of the combustor tube.</strong></p>
 <p>The combustion of methane is represented by the reaction: <span class="math notranslate nohighlight">\(CH_4 + 2 (O_2 + 3.76 N_2) \rightarrow CO_2 + 2 H_2O + 7.52 N_2\)</span> <br></p>
 <p><strong>3. Use the above reaction equation and the definition of <span class="math notranslate nohighlight">\(\phi\)</span> to find the mass flow rate of the fuel <span class="math notranslate nohighlight">\(\dot{m}_{fuel}\)</span>.</strong> <br></p>
 <p><strong>4. Calculate the total heat input using <span class="math notranslate nohighlight">\(\dot{m}_{fuel}\)</span> and calculate the efficiency of the complete cycle.</strong> <br></p>
@@ -306,19 +307,18 @@ Is there also a minimum diameter? If so, no calculation required, discuss what c
 </div>
 <div class="section" id="co-2-and-no-x-emissions">
 <h3><span class="math notranslate nohighlight">\(CO_2\)</span> and <span class="math notranslate nohighlight">\(NO_x\)</span> emissions<a class="headerlink" href="#co-2-and-no-x-emissions" title="Permalink to this headline">¶</a></h3>
-<p><strong>6. A gas turbine manufacturer claims that their gas turbines can be fired with a hydrogen content of 30%. Discuss wheter this could be regarded a milestone in the development of hydrogen combustion in gas turbines (use the top plot in Figure 5 to support your answer).</strong></p>
-<p><strong>7. Regarding emissions, discuss the advantages and disadvantages of increasing the hydrogen content of the fuel. Adjust PART A and use Figure 5.</strong></p>
+<p><strong>6. A gas turbine manufacturer claims that their gas turbines can be fired with a hydrogen content of 30%. Discuss whether this could be regarded a milestone in the development of hydrogen combustion in gas turbines (use the top plot in Figure 5 to support your answer).</strong></p>
+<p><strong>7. Regarding emissions, discuss the advantages and disadvantages of increasing the hydrogen content of the fuel and the influence of the equivalence ratio. Adjust PART A and use Figure 5.</strong></p>
 </div>
 <div class="section" id="bonus-assignment">
 <h3>Bonus assignment<a class="headerlink" href="#bonus-assignment" title="Permalink to this headline">¶</a></h3>
 <p>Voor de verschillende mengsels, beschrijf de invloed op de performance en koeling van de turbine.</p>
 <!-- For simplicty, it was assumed that natural gas does consist of pure methane. In reality, it could be a mix of methane, higher hydrocarbons and nitrogen. <br>An example is Dutch Natural Gas (DNG), which consists of $80\%CH_4$, $5\%C_2H_6$ and $15\%N_2$. -->
-<p><strong>Repeat tasks 1-4 for a fuel consisting of <span class="math notranslate nohighlight">\(50\%H_2\)</span>/<span class="math notranslate nohighlight">\(50\%DNG\)</span>. <br> Hint1: Nitrogen does not participate in the reaction. <br> Hint2: This requires more adjustment of the code than just PARTS A, B, C, D.</strong></p>
 </div>
 </div>
 <div class="section" id="code">
 <h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
-<p>Two properties of importance in this assignment are the laminar flame speed <span class="math notranslate nohighlight">\(S_L\)</span> and the adiabtic flame temperature <span class="math notranslate nohighlight">\(T_{ad}\)</span> of a mixture. These properties can be determined by solving the equations for continuity, momentum, species and energy in one dimension. Fortunetaly, we do not need to solve these equations by hand, instead a chemical kinetics software (Cantera) is used to solve these equations by running a simulation. The simulation is illustrated in the sketch below. Keep in mind that the simulation can take some time to complete.</p>
+<p>Two properties of importance in this assignment are the laminar flame speed <span class="math notranslate nohighlight">\(S_L\)</span> and the adiabtic flame temperature <span class="math notranslate nohighlight">\(T_{ad}\)</span> of a mixture. These properties can be determined by solving the equations for continuity, momentum, species and energy in one dimension. Fortunetaly, we do not need to solve these equations by hand, instead a chemical kinetics software (Cantera) is used to solve these equations by running a simulation. The simulation is illustrated in the sketch below. <strong>Keep in mind that the simulation can take some time to complete.</strong></p>
 <p>For more information about Cantera visit: https://cantera.org/. <br>
 For more background information regarding the 1D flame simulation visti: https://cantera.org/science/flames.html</p>
 <p><img alt="laminar_flame_speed_1D" src="_images/laminar_flame_speed_1D.svg" /></p>
@@ -341,8 +341,8 @@ For more background information regarding the 1D flame simulation visti: https:/
 <span class="n">power_output</span><span class="o">*=</span><span class="mf">1e6</span>
 
 <span class="c1"># Compressor and turbine polytropic efficiencies</span>
-<span class="n">etap_c</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">etap_t</span> <span class="o">=</span> <span class="mi">1</span>   
+<span class="n">etap_c</span> <span class="o">=</span> <span class="mf">0.85</span>
+<span class="n">etap_t</span> <span class="o">=</span> <span class="mf">0.90</span>  
 
 <span class="c1"># Pressure ratio</span>
 <span class="n">PR</span> <span class="o">=</span> <span class="mi">10</span>
@@ -378,15 +378,15 @@ For more background information regarding the 1D flame simulation visti: https:/
 <span class="c1">########## PART A: ADJUST CODE HERE ##########</span>
 
 <span class="c1"># Equivalence ratios    </span>
-<span class="n">phis</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="c1"># Set equivalence ratios ranging from 0.4 to 0.8</span>
+<span class="n">phis</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="c1"># Set equivalence ratios ranging from 0.4 to 0.8</span>
 
-<span class="c1"># Hydrogen percentages</span>
-<span class="n">H2_percentages</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="c1"># Set hydrogen volume percentages of the fuel ranging from 0 to 100 </span>
+<span class="c1"># Hydrogen percentages by volume of fuel</span>
+<span class="n">H2_percentages</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="c1"># Set hydrogen volume percentages of the fuel ranging from 0 to 100 </span>
 
 <span class="c1">################# END PART A ##################</span>
 
 <span class="c1"># Define colors to make distinction between different mixtures based on hydrogen percentage</span>
-<span class="n">colors</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">rainbow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">H2_percentages</span><span class="p">)))</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">viridis</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">H2_percentages</span><span class="p">)))</span>
 
 <span class="c1">#%% Premixed flame object</span>
 <span class="k">class</span> <span class="nc">mixture_class</span><span class="p">:</span>
@@ -422,12 +422,12 @@ For more background information regarding the 1D flame simulation visti: https:/
         <span class="n">check_air</span> <span class="o">=</span> <span class="n">f_O2</span> <span class="o">+</span> <span class="n">f_N2</span>
         <span class="n">check_fuel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">f_H2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">f_CH4</span>
         
-        <span class="k">if</span> <span class="n">check_air</span> <span class="o">==</span> <span class="mf">1.0</span> <span class="ow">and</span> <span class="nb">round</span><span class="p">(</span><span class="n">check_fuel</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mf">1.0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">check_air</span> <span class="o">==</span> <span class="mf">1.0</span> <span class="ow">and</span> <span class="nb">round</span><span class="p">(</span><span class="n">check_fuel</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mf">1.0</span><span class="p">:</span>
             <span class="k">pass</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s2">&quot;fuel or air composition is incorrect!&quot;</span><span class="p">)</span>
             
-        <span class="k">if</span> <span class="nb">round</span><span class="p">(</span><span class="n">check_fuel</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mf">1.0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">round</span><span class="p">(</span><span class="n">check_fuel</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mf">1.0</span><span class="p">:</span>
             <span class="k">pass</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s2">&quot;fuel composition is incorrect!&quot;</span><span class="p">)</span>
@@ -482,8 +482,7 @@ For more background information regarding the 1D flame simulation visti: https:/
         <span class="n">flame</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">loglevel</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">auto</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         
         <span class="c1"># Result 1: Laminar flame speed</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">S_L0</span> <span class="o">=</span> <span class="n">flame</span><span class="o">.</span><span class="n">velocity</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span> <span class="c1"># units: cm.s^-1 </span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">S_T</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">S_L0</span><span class="o">/</span><span class="mi">100</span> <span class="c1"># units: m.s^-1 Rough estimation of the turbulent flame speed</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">S_L0</span> <span class="o">=</span> <span class="n">flame</span><span class="o">.</span><span class="n">velocity</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span> <span class="c1"># units: cm.s^-1</span>
         
         <span class="c1"># Result 2: Adiabtaic flame temperature</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">T_ad</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gas</span><span class="o">.</span><span class="n">T</span>
@@ -544,8 +543,8 @@ For more background information regarding the 1D flame simulation visti: https:/
         
         <span class="c1"># Compressor stage </span>
         <span class="c1"># Temperature after compressor stage</span>
-        <span class="n">T3</span> <span class="o">=</span> <span class="mf">293.15</span> <span class="c1">#None # units: K  </span>
-        <span class="n">p3</span> <span class="o">=</span> <span class="mi">101325</span> <span class="c1">#None # units: Pa</span>
+        <span class="n">T3</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># units: K  </span>
+        <span class="n">p3</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># units: Pa</span>
         
         <span class="c1"># Combustor inlet temperature in K and pressure in Pa</span>
         <span class="n">T_u</span> <span class="o">=</span> <span class="n">T3</span> <span class="c1"># units: K </span>
@@ -577,7 +576,14 @@ For more background information regarding the 1D flame simulation visti: https:/
         
         <span class="c1">################# END PART C ##################</span>
         
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mixture solved: phi=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;, H2%=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">H2_percentage</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mixture solved: phi=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;, H2%=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">H2_percentage</span><span class="p">))</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Laminar flame speed = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">mixture</span><span class="o">.</span><span class="n">S_L0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39; cm/s&#39;</span><span class="p">)</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Adiabtic flame temperature = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">mixture</span><span class="o">.</span><span class="n">T_ad</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39; K&#39;</span><span class="p">)</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------&#39;</span><span class="p">)</span>
+        
         
 <span class="c1">#%% Plots A: Laminar flame speed/adiabatic flame temperture vs equivalence ratio</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
@@ -595,7 +601,7 @@ For more background information regarding the 1D flame simulation visti: https:/
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$S_L$ [cm.s$^{-1}$]&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">250</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Laminar flame speed vs. equivalence ratio </span><span class="se">\n</span><span class="s1"> $T_u=$&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">T_u</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39; K, $p_u$=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">p_u</span><span class="o">*</span><span class="mf">1e-5</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; bar&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Laminar flame speed vs. equivalence ratio </span><span class="se">\n</span><span class="s1"> $T_u=$&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">T_u</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39; K, $p_u$=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">p_u</span><span class="o">*</span><span class="mf">1e-5</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; bar&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 
 <span class="c1"># Figure 2: Adiabatic flame temperature vs equivalence ratio</span>
@@ -605,7 +611,7 @@ For more background information regarding the 1D flame simulation visti: https:/
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">1200</span><span class="p">,</span> <span class="mi">2800</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Adiabtic flame temperature vs. equivalence ratio </span><span class="se">\n</span><span class="s1"> $T_u=$&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">T_u</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39; K, $p_u$=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">p_u</span><span class="o">*</span><span class="mf">1e-5</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; bar&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Adiabtic flame temperature vs. equivalence ratio </span><span class="se">\n</span><span class="s1"> $T_u=$&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">T_u</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39; K, $p_u$=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">p_u</span><span class="o">*</span><span class="mf">1e-5</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; bar&#39;</span><span class="p">)</span>
 
 <span class="c1"># Initialize list for laminar flame speeds</span>
 <span class="n">S_L0_lists</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">H2_percentages</span><span class="p">))]</span>
@@ -637,13 +643,13 @@ For more background information regarding the 1D flame simulation visti: https:/
         <span class="c1"># Create new array for phi</span>
         <span class="n">phis_fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">phis</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">phis</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
         
-        <span class="c1"># Plot 4th order polynomial fit for laminar flame speed </span>
+        <span class="c1"># Plot 3th order polynomial fit for laminar flame speed </span>
         <span class="n">coeff_S_L0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">phis</span><span class="p">,</span> <span class="n">S_L0</span><span class="p">,</span> <span class="n">poly_order</span><span class="p">)</span>
         <span class="n">poly_S_L0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">coeff_S_L0</span><span class="p">)</span>
         <span class="n">S_L0_fit</span> <span class="o">=</span> <span class="n">poly_S_L0</span><span class="p">(</span><span class="n">phis_fit</span><span class="p">)</span>
         <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">phis_fit</span><span class="p">,</span> <span class="n">S_L0_fit</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
         
-        <span class="c1"># Plot 4th order polynomial fit for adiabatic flame temperature </span>
+        <span class="c1"># Plot 3th order polynomial fit for adiabatic flame temperature </span>
         <span class="n">coeff_T_ad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">phis</span><span class="p">,</span> <span class="n">T_ad</span><span class="p">,</span> <span class="n">poly_order</span><span class="p">)</span>
         <span class="n">poly_T_ad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">coeff_T_ad</span><span class="p">)</span>
         <span class="n">T_ad_fit</span> <span class="o">=</span> <span class="n">poly_T_ad</span><span class="p">(</span><span class="n">phis_fit</span><span class="p">)</span>
@@ -735,7 +741,7 @@ For more background information regarding the 1D flame simulation visti: https:/
 <span class="n">ax4</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$CO_2$ emissions vs. hydrogen/methane fuel blends (heat input %)&#39;</span><span class="p">)</span>
 <span class="n">ax4</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 
-<span class="n">fig5</span><span class="p">,</span> <span class="p">(</span><span class="n">ax5</span><span class="p">,</span> <span class="n">ax5_1</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">fig5</span><span class="p">,</span> <span class="p">(</span><span class="n">ax5</span><span class="p">,</span> <span class="n">ax5_1</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">1.5</span><span class="o">*</span><span class="mf">6.40</span><span class="p">,</span> <span class="mf">1.5</span><span class="o">*</span><span class="mf">4.80</span><span class="p">))</span>
 <span class="n">ax5</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">H2_percentage_volume</span><span class="p">,</span> <span class="n">CO2_percentage</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="n">marker</span><span class="p">)</span>
 <span class="n">ax5</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">x_ticks</span><span class="p">)</span>
 <span class="n">ax5</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">y_ticks</span><span class="p">)</span>
@@ -745,12 +751,11 @@ For more background information regarding the 1D flame simulation visti: https:/
 <span class="n">ax5</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">mixture</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">mixtures</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">mixture</span><span class="o">.</span><span class="n">phi</span> <span class="o">==</span> <span class="n">phis</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
-        <span class="n">NO_percentage_volume</span> <span class="o">=</span> <span class="n">mixture</span><span class="o">.</span><span class="n">X_NO</span><span class="o">*</span><span class="mi">100</span>
-        <span class="n">NO2_percentage_volume</span> <span class="o">=</span> <span class="n">mixture</span><span class="o">.</span><span class="n">X_NO2</span><span class="o">*</span><span class="mi">100</span>
-        <span class="n">ax5_1</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">mixture</span><span class="o">.</span><span class="n">H2_percentage</span><span class="p">,</span> <span class="n">NO_percentage_volume</span><span class="p">,</span> <span class="n">bin_width</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:red&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$NO$&#39;</span> <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-        <span class="n">ax5_1</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">mixture</span><span class="o">.</span><span class="n">H2_percentage</span><span class="p">,</span> <span class="n">NO2_percentage_volume</span><span class="p">,</span> <span class="n">bin_width</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="n">NO_percentage_volume</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$NO_2$&#39;</span> <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-        <span class="n">ax5_1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$NO_x$ emissions for $\phi=$&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">mixture</span><span class="o">.</span><span class="n">phi</span><span class="p">))</span>
+    <span class="n">NO_percentage_volume</span> <span class="o">=</span> <span class="n">mixture</span><span class="o">.</span><span class="n">X_NO</span><span class="o">*</span><span class="mi">100</span>
+    <span class="n">NO2_percentage_volume</span> <span class="o">=</span> <span class="n">mixture</span><span class="o">.</span><span class="n">X_NO2</span><span class="o">*</span><span class="mi">100</span>
+    <span class="n">NOX_percentage_volume</span> <span class="o">=</span> <span class="n">NO_percentage_volume</span> <span class="o">+</span> <span class="n">NO2_percentage_volume</span>
+    <span class="n">ax5_1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mixture</span><span class="o">.</span><span class="n">H2_percentage</span><span class="p">,</span> <span class="n">NOX_percentage_volume</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="n">linestyle</span><span class="p">,</span>  <span class="n">marker</span><span class="o">=</span><span class="n">marker</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="n">markersize</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\phi$=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">mixture</span><span class="o">.</span><span class="n">phi</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;, $H_2$%=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">mixture</span><span class="o">.</span><span class="n">H2_percentage</span><span class="p">))</span>
+    <span class="n">ax5_1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$NO_x$ emissions for different mixtures&#39;</span><span class="p">)</span>
         
 <span class="n">ax5_1</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">105</span><span class="p">)</span>
 <span class="n">ax5_1</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">x_ticks</span><span class="p">)</span>
@@ -816,7 +821,7 @@ For more background information regarding the 1D flame simulation visti: https:/
     <span class="n">f_H2</span> <span class="o">=</span> <span class="n">mixture</span><span class="o">.</span><span class="n">f_H2</span>
     <span class="n">f_CH4</span> <span class="o">=</span> <span class="n">mixture</span><span class="o">.</span><span class="n">f_CH4</span>
     
-    <span class="c1"># Specific heat capacity (heat capacity per unit mass)</span>
+    <span class="c1"># Specific heat capacity of turbine (heat capacity per unit mass)</span>
     <span class="n">cp_t</span> <span class="o">=</span> <span class="n">mixture</span><span class="o">.</span><span class="n">cp_b</span>
     
     <span class="c1"># Total mass flow rate</span>
@@ -829,7 +834,7 @@ For more background information regarding the 1D flame simulation visti: https:/
     <span class="n">A</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># units: m^2</span>
     <span class="n">D</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># units: m</span>
     
-    <span class="c1"># ratio of mass fuel and mass air at stoichiometric conditions</span>
+    <span class="c1"># Ratio of mass fuel and mass air at stoichiometric conditions</span>
     <span class="n">m_f_over_m_a_stoich</span> <span class="o">=</span> <span class="kc">None</span>
     
     <span class="c1"># Mass flow of the fuel</span>
@@ -838,10 +843,11 @@ For more background information regarding the 1D flame simulation visti: https:/
     <span class="c1"># Heat input or Heat of combustion</span>
     <span class="n">Q</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># units: W</span>
     
-    <span class="c1"># thermal cycle efficiency</span>
+    <span class="c1"># Thermal cycle efficiency</span>
     <span class="n">eta_cycle</span> <span class="o">=</span> <span class="kc">None</span>
 
-    
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mixture: phi=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">mixture</span><span class="o">.</span><span class="n">phi</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;, H2%=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">mixture</span><span class="o">.</span><span class="n">H2_percentage</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------&#39;</span><span class="p">)</span>
 <span class="c1">################# END PART D ##################</span>
 </pre></div>
 </div>
@@ -849,7 +855,7 @@ For more background information regarding the 1D flame simulation visti: https:/
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1794</span><span class="o">/</span><span class="mf">2053359929.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1775</span><span class="o">/</span><span class="mf">3769396994.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#%% Load required packages</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">sys</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">cantera</span> <span class="k">as</span> <span class="nn">ct</span>
