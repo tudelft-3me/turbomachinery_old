@@ -22,4 +22,5 @@ dependencies:
   - voila
   - scipy
   - coolprop
+  - sympy
 
