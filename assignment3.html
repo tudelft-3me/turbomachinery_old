@@ -56,6 +56,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Assignment 2: 3D compressor stage design" href="assignment2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -116,7 +117,7 @@
   Assignments
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="run_code_guide.html">
    Run code locally
@@ -130,6 +131,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="assignment2.html">
    Assignment 2: 3D compressor stage design
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Assignment 3: Combustor Design
   </a>
  </li>
 </ul>
@@ -284,21 +290,21 @@ One of the challenges focuses on the use of hydrogen as a fuel in gas turbines.<
 <h2>Tasks<a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="diameter-of-the-combustor">
 <h3>Diameter of the combustor<a class="headerlink" href="#diameter-of-the-combustor" title="Permalink to this headline">¶</a></h3>
-<p>A gas turbine has a power output of 100 MW. The combustion section consists of 8 can combustors. Each can combustor is, for the sake of simplicty, represented by a tube with a diameter <span class="math notranslate nohighlight">\(D\)</span>.<br>
+<p>A gas turbine has a power output of 100 MW. The combustion section consists of 16 can combustors. Each can combustor is, for the sake of simplicty, represented by a tube with a diameter <span class="math notranslate nohighlight">\(D\)</span>.<br>
 Consider the simple Brayton cycle illustrated below. The inlet temperature <span class="math notranslate nohighlight">\(T_2\)</span> of the compressor is 293 K and the inlet pressure <span class="math notranslate nohighlight">\(p_2\)</span> is 101325 Pa. To prevent damage of the turbine blades a turbine inlet temperature (TIT) of 1800 K is desired. Furthermore, assume that the specific heat of the fluid is constant through the compressor, i.e. specific heat capacity <span class="math notranslate nohighlight">\(c_{p,c}\approx 1005 \frac{J}{kgK}\)</span> and a heat capacity ratio <span class="math notranslate nohighlight">\(\gamma_c\)</span>=1.4. The polytropic efficiency of the compressor and turbine are 0.85 and 0.90, respectively.</p>
 <p>The pressure ratio over the compressor (and turbine) will depend on your studentID:</p>
 <p>PR = 10 if (numpy.mod(studentID, 2) + 1) == 1<br>
 PR = 20 if (numpy.mod(studentID, 2) + 1) == 2</p>
 <p>Assume the TIT to be equal to the temperature of the flame inside the combustor. The flame temperature depends on the equivalence ratio (<span class="math notranslate nohighlight">\(\phi\)</span>), the hydrogen volume percentage of the fuel (<span class="math notranslate nohighlight">\(H_2\%\)</span>) and the combustor inlet temperature and pressure. For now consider the fuel to consist of pure natural gas (<span class="math notranslate nohighlight">\(H_2\%=0\)</span>). Note that the equivalence ratio is given by:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f0c5c733-8700-44f6-8985-e6720fb52eb7">
-<span class="eqno">()<a class="headerlink" href="#equation-f0c5c733-8700-44f6-8985-e6720fb52eb7" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5b40e5ef-d676-4dc0-917f-344d7892a975">
+<span class="eqno">(1)<a class="headerlink" href="#equation-5b40e5ef-d676-4dc0-917f-344d7892a975" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \phi = \frac{\frac{m_{fuel}}{m_{air}}}{(\frac{m_{fuel}}{m_{air}})_{stoich}} = \frac{\frac{n_{fuel}}{n_{air}}}{(\frac{n_{fuel}}{n_{air}})_{stoich}}
 \end{align}\]</div>
 <p>Furthermore, assume the mass flow to be constant throughout the cycle.</p>
 <p><img alt="assignment3_cycle" src="_images/assignment3_cycle.svg" /></p>
 <p><strong>1. Calculate the inlet temperature <span class="math notranslate nohighlight">\(T_3\)</span> and inlet pressure <span class="math notranslate nohighlight">\(p_3\)</span> of the combustor and determine the required equivalence ratio (adjust PART A and PART B and run the code), so that the TIT specification is met.</strong> <br></p>
 <p>Inside the combustor the flow is turbulent. Turbulence causes an increase in the flame speed, so that the turbulent flame speed <span class="math notranslate nohighlight">\(S_T \approx 10 S_L\)</span>.</p>
-<p><strong>2. Calculate <span class="math notranslate nohighlight">\(T_5\)</span> and find the total mass flow rate (<span class="math notranslate nohighlight">\(\dot{m}_{tot}\)</span>) through the gas turbine. For this total mass flow rate find the maximal diameter <span class="math notranslate nohighlight">\(D\)</span> of a single combustor tube, so that flashback is prevented. Adjust PART A, PART B, PART C and PART D in the code and run it again. Report the steps you have taken and the assumptions you made. <br>
+<p><strong>2. Calculate <span class="math notranslate nohighlight">\(T_5\)</span> and find the total mass flow rate (<span class="math notranslate nohighlight">\(\dot{m}_{tot}\)</span>) through the gas turbine. For this total mass flow rate does a diameter of 75 cm of a single can combustor suffice to prevent flashback? Adjust PART A, PART B, PART C and PART D in the code and run it again. Report the steps you have taken and the assumptions you made. <br>
 Is there also a minimum diameter? If so, discuss what could be the reason for the necessity of a minimal diameter of the combustor tube.</strong></p>
 <p>The combustion of methane is represented by the reaction: <span class="math notranslate nohighlight">\(CH_4 + 2 (O_2 + 3.76 N_2) \rightarrow CO_2 + 2 H_2O + 7.52 N_2\)</span> <br></p>
 <p><strong>3. Use the above reaction equation and the definition of <span class="math notranslate nohighlight">\(\phi\)</span> to find the mass flow rate of the fuel <span class="math notranslate nohighlight">\(\dot{m}_{fuel}\)</span>.</strong> <br></p>
@@ -308,7 +314,7 @@ Is there also a minimum diameter? If so, discuss what could be the reason for th
 <div class="section" id="co-2-and-no-x-emissions">
 <h3><span class="math notranslate nohighlight">\(CO_2\)</span> and <span class="math notranslate nohighlight">\(NO_x\)</span> emissions<a class="headerlink" href="#co-2-and-no-x-emissions" title="Permalink to this headline">¶</a></h3>
 <p><strong>6. A gas turbine manufacturer claims that their gas turbines can be fired with a hydrogen content of 30%. Discuss whether this could be regarded a milestone in the development of hydrogen combustion in gas turbines (use the top plot in Figure 5 to support your answer).</strong></p>
-<p><strong>7. Regarding emissions, discuss the advantages and disadvantages of increasing the hydrogen content of the fuel and the influence of the equivalence ratio. Adjust PART A and use Figure 5.</strong></p>
+<p><strong>7. Regarding emissions, discuss the advantages and disadvantages of increasing the hydrogen content of the fuel. Adjust PART A and use Figure 5.</strong></p>
 </div>
 <div class="section" id="bonus-assignment">
 <h3>Bonus assignment<a class="headerlink" href="#bonus-assignment" title="Permalink to this headline">¶</a></h3>
@@ -318,7 +324,7 @@ Is there also a minimum diameter? If so, discuss what could be the reason for th
 </div>
 <div class="section" id="code">
 <h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
-<p>Two properties of importance in this assignment are the laminar flame speed <span class="math notranslate nohighlight">\(S_L\)</span> and the adiabtic flame temperature <span class="math notranslate nohighlight">\(T_{ad}\)</span> of a mixture. These properties can be determined by solving the equations for continuity, momentum, species and energy in one dimension. Fortunetaly, we do not need to solve these equations by hand, instead a chemical kinetics software (Cantera) is used to solve these equations by running a simulation. The simulation is illustrated in the sketch below. <strong>Keep in mind that the simulation can take some time to complete.</strong></p>
+<p>Two properties of importance in this assignment are the laminar flame speed <span class="math notranslate nohighlight">\(S_L\)</span> and the adiabtic flame temperature <span class="math notranslate nohighlight">\(T_{ad}\)</span> of a mixture. These properties can be determined by solving the equations for continuity, momentum, species and energy in one dimension. Fortunetaly, we do not need to solve these equations by hand, instead a chemical kinetics software (Cantera) is used to solve these equations by running a simulation. The simulation is illustrated in the sketch below. <strong>Keep in mind that the simulation can take some time to complete. It is also possible to copy the code below and paste and run it in Spyder</strong></p>
 <p>For more information about Cantera visit: https://cantera.org/. <br>
 For more background information regarding the 1D flame simulation visti: https://cantera.org/science/flames.html</p>
 <p><img alt="laminar_flame_speed_1D" src="_images/laminar_flame_speed_1D.svg" /></p>
@@ -855,7 +861,7 @@ For more background information regarding the 1D flame simulation visti: https:/
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1789</span><span class="o">/</span><span class="mf">3769396994.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2075</span><span class="o">/</span><span class="mf">3769396994.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#%% Load required packages</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">sys</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">cantera</span> <span class="k">as</span> <span class="nn">ct</span>
@@ -894,7 +900,14 @@ For more background information regarding the 1D flame simulation visti: https:/
               
         
             <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="assignment2.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Assignment 2: 3D compressor stage design</p>
+        </div>
+    </a>
 </div>
         
         </div>
