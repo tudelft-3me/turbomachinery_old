@@ -508,7 +508,7 @@ for mixture in mixtures:
     phi = mixture.phi
     
     # Density of the unburnt mixture (before entering the combustor)
-    rho_u = mixture.rho_u # units: kg.s^-1
+    rho_u = mixture.rho_u # units: kg.m^-3
     
     # Volumtric fractions of hydrogen and methane
     f_H2 = mixture.f_H2
@@ -547,7 +547,7 @@ for mixture in mixtures:
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m/tmp/ipykernel_1722/3769396994.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_1708/3342468676.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      1[0m [0;31m#%% Load required packages[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      2[0m [0;32mimport[0m [0msys[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 3[0;31m [0;32mimport[0m [0mcantera[0m [0;32mas[0m [0mct[0m[0;34m[0m[0;34m[0m[0m
