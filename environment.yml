@@ -4,6 +4,7 @@ channels:
   - cantera
 dependencies:
   - ipython
+  - conda
   - numpy
   - jupyterlab=3
   - jupyter
@@ -21,6 +22,5 @@ dependencies:
   - ipyvolume
   - voila
   - scipy
-  - coolprop
   - sympy
 

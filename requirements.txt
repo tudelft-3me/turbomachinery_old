@@ -10,3 +10,4 @@ ipyvolume
 scipy
 vega_datasets
 coolprop
+conda
