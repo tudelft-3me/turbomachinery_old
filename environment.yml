@@ -1,4 +1,4 @@
-name: turbo_a
+name: cantera_env
 channels:
   - conda-forge
   - cantera
