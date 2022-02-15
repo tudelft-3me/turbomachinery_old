@@ -37,15 +37,18 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe,.cell"
@@ -358,8 +361,8 @@ Consider the simple Brayton cycle illustrated below. The inlet temperature <span
 <p>PR = 10 if (numpy.mod(studentID, 2) + 1) == 1<br>
 PR = 20 if (numpy.mod(studentID, 2) + 1) == 2</p>
 <p>Assume the TIT to be equal to the temperature of the flame inside the combustor. The flame temperature depends on the equivalence ratio (<span class="math notranslate nohighlight">\(\phi\)</span>), the hydrogen volume percentage of the fuel (<span class="math notranslate nohighlight">\(H_2\%\)</span>) and the combustor inlet temperature and pressure. For now consider the fuel to consist of pure natural gas (<span class="math notranslate nohighlight">\(H_2\%=0\)</span>). Note that the equivalence ratio is given by:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-01b72531-40d6-47c7-8e04-f993281e8dae">
-<span class="eqno">(1)<a class="headerlink" href="#equation-01b72531-40d6-47c7-8e04-f993281e8dae" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fc8aa7d5-b5b0-4b76-9c65-0148d1951372">
+<span class="eqno">(1)<a class="headerlink" href="#equation-fc8aa7d5-b5b0-4b76-9c65-0148d1951372" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \phi = \frac{\frac{m_{fuel}}{m_{air}}}{(\frac{m_{fuel}}{m_{air}})_{stoich}} = \frac{\frac{n_{fuel}}{n_{air}}}{(\frac{n_{fuel}}{n_{air}})_{stoich}}
 \end{align}\]</div>
 <p>Furthermore, assume the mass flow to be constant throughout the cycle.</p>
@@ -924,7 +927,7 @@ For more background information regarding the 1D flame simulation visti: https:/
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1713</span><span class="o">/</span><span class="mf">522618814.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1885</span><span class="o">/</span><span class="mf">522618814.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#%% Load required packages</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">sys</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">cantera</span> <span class="k">as</span> <span class="nn">ct</span>
