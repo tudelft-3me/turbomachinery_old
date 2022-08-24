@@ -30,4 +30,4 @@ Regards,
 Sikke Klein <br>
 Rene Pecnik <br>
 Vera Popovich <br>
-Luuk Altenburgggg <br>
+Luuk Altenburg <br>
