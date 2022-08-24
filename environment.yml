@@ -5,6 +5,7 @@ channels:
 dependencies:
   - ipython
   - conda
+  - jupyter-book
   - numpy
   - jupyterlab=3
   - jupyter
@@ -23,4 +24,8 @@ dependencies:
   - voila
   - scipy
   - sympy
-
+  - opencv
+  - progressbar2
+  - imutils
+  - bokeh
+  - jupyter_bokeh
