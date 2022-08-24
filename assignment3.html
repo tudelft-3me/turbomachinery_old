@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Assignment 3: Combustor Design &#8212; Turbomachinery 2021-2022</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -39,12 +37,14 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -52,10 +52,9 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Assignment 2: 3D compressor stage design" href="assignment2.html" />
@@ -66,7 +65,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -75,9 +88,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -95,14 +109,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   Introduction
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Recorded lectures
  </span>
@@ -143,95 +158,196 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/assignment3.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/TU-Delft-3ME/turbomachinery/main?urlpath=lab/tree/assignment3.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/TU-Delft-3ME/turbomachinery/blob/main/assignment3.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
-    </div>
-</div>
-
         </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/tudelft-3me/turbomachinery/main?urlpath=lab/tree/assignment3.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/tudelft-3me/turbomachinery/blob/main/assignment3.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/assignment3.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
    Introduction
@@ -273,12 +389,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Assignment 3: Combustor Design</h1>
@@ -336,32 +451,33 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="assignment-3-combustor-design">
-<h1>Assignment 3: Combustor Design<a class="headerlink" href="#assignment-3-combustor-design" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="assignment-3-combustor-design">
+<h1>Assignment 3: Combustor Design<a class="headerlink" href="#assignment-3-combustor-design" title="Permalink to this headline">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>The global desire to reduce greenhouse gas emissions is the main reason for the interest in the use of hydrogen for power generation.
 Although hydrogen shows to be a promising solution, there are many challenges that need to be solved.
 One of the challenges focuses on the use of hydrogen as a fuel in gas turbines.</p>
 <p>In gas turbines hydrogen could replace natural gas as a fuel in the combustor. Unfortunately, this is accompanied with a technical challenge which deals with an important property in premixed combustion: the flame speed. The flame speed of hydrogen is an order of magnitude higher than natural gas due to the highly reactive nature of hydrogen. As a result a hydrogen flame is more prone to flashback than a natural gas flame.</p>
 <p>Flame flashback is the undesired upstream propagation of a flame into the premix section of a combustor. Flashback occurs when the flame speed is higher than the velocity of the incoming fresh mixture. This could cause severe equipment damage and turbine shutdown. Adjustments to traditional combustors are required in order to guarantee safe operation when using hydrogen as fuel.</p>
 <p>To this end the students are asked to investigate the use of hydrogen, natural gas and a blend thereof in gas turbines. The first part will focus on the impact of the different fuels on the combustor geometry. Finally, we will have a closer look at the influence of different fuels on the <span class="math notranslate nohighlight">\(CO_2\)</span> and <span class="math notranslate nohighlight">\(NO_x\)</span> emissions. For simplicty, it is assumed that natural gas consists purely of methane (<span class="math notranslate nohighlight">\(CH_4\)</span>).</p>
-</div>
-<div class="section" id="tasks">
-<h2>Tasks<a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="diameter-of-the-combustor">
-<h3>Diameter of the combustor<a class="headerlink" href="#diameter-of-the-combustor" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="tasks">
+<h2>Tasks<a class="headerlink" href="#tasks" title="Permalink to this headline">#</a></h2>
+<section id="diameter-of-the-combustor">
+<h3>Diameter of the combustor<a class="headerlink" href="#diameter-of-the-combustor" title="Permalink to this headline">#</a></h3>
 <p>A gas turbine has a power output of 100 MW. The combustion section consists of 16 can combustors. Each can combustor is, for the sake of simplicty, represented by a tube with a diameter <span class="math notranslate nohighlight">\(D\)</span>.<br>
 Consider the simple Brayton cycle illustrated below. The inlet temperature <span class="math notranslate nohighlight">\(T_2\)</span> of the compressor is 293 K and the inlet pressure <span class="math notranslate nohighlight">\(p_2\)</span> is 101325 Pa. To prevent damage of the turbine blades a turbine inlet temperature (TIT) of 1800 K is desired. Furthermore, assume that the specific heat of the fluid is constant through the compressor, i.e. specific heat capacity <span class="math notranslate nohighlight">\(c_{p,c}\approx 1005 \frac{J}{kgK}\)</span> and a heat capacity ratio <span class="math notranslate nohighlight">\(\gamma_c\)</span>=1.4. The polytropic efficiency of the compressor and turbine are 0.85 and 0.90, respectively.</p>
 <p>The pressure ratio over the compressor (and turbine) will depend on your studentID:</p>
 <p>PR = 10 if (numpy.mod(studentID, 2) + 1) == 1<br>
 PR = 20 if (numpy.mod(studentID, 2) + 1) == 2</p>
 <p>Assume the TIT to be equal to the temperature of the flame inside the combustor. The flame temperature depends on the equivalence ratio (<span class="math notranslate nohighlight">\(\phi\)</span>), the hydrogen volume percentage of the fuel (<span class="math notranslate nohighlight">\(H_2\%\)</span>) and the combustor inlet temperature and pressure. For now consider the fuel to consist of pure natural gas (<span class="math notranslate nohighlight">\(H_2\%=0\)</span>). Note that the equivalence ratio is given by:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-58ec318b-4641-4f88-9433-00cd7c4e4808">
-<span class="eqno">(1)<a class="headerlink" href="#equation-58ec318b-4641-4f88-9433-00cd7c4e4808" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f3e273fb-9324-468b-bb7b-a1dbd39f0e9b">
+<span class="eqno">(1)<a class="headerlink" href="#equation-f3e273fb-9324-468b-bb7b-a1dbd39f0e9b" title="Permalink to this equation">#</a></span>\[\begin{align}
 \phi = \frac{\frac{m_{fuel}}{m_{air}}}{(\frac{m_{fuel}}{m_{air}})_{stoich}} = \frac{\frac{n_{fuel}}{n_{air}}}{(\frac{n_{fuel}}{n_{air}})_{stoich}}
 \end{align}\]</div>
 <p>Furthermore, assume the mass flow to be constant throughout the cycle.</p>
@@ -375,20 +491,20 @@ The combustion of hydrogen is represented by the reaction: <span class="math not
 <p><strong>3. Use the above reaction equation(s) and the definition of <span class="math notranslate nohighlight">\(\phi\)</span> to find the mass flow rate of the fuel <span class="math notranslate nohighlight">\(\dot{m}_{fuel}\)</span>.</strong> <br></p>
 <p><strong>4. Calculate the total heat input using <span class="math notranslate nohighlight">\(\dot{m}_{fuel}\)</span> and calculate the efficiency of the complete cycle.</strong> <br></p>
 <p><strong>5. Repeat tasks 1-4 for a fuel consisting of <span class="math notranslate nohighlight">\(50\%H_2\)</span>/<span class="math notranslate nohighlight">\(50\%CH_4\)</span> and <span class="math notranslate nohighlight">\(100\%H_2\)</span> by volume. Discuss the effect of the addition of hydrogen to the fuel on the combustor geometry and cycle performance.</strong></p>
-</div>
-<div class="section" id="co-2-and-no-x-emissions">
-<h3><span class="math notranslate nohighlight">\(CO_2\)</span> and <span class="math notranslate nohighlight">\(NO_x\)</span> emissions<a class="headerlink" href="#co-2-and-no-x-emissions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="co-2-and-no-x-emissions">
+<h3><span class="math notranslate nohighlight">\(CO_2\)</span> and <span class="math notranslate nohighlight">\(NO_x\)</span> emissions<a class="headerlink" href="#co-2-and-no-x-emissions" title="Permalink to this headline">#</a></h3>
 <p><strong>6. A gas turbine manufacturer claims that their gas turbines can be fired with a hydrogen content of 30% by volume. Discuss whether this could be regarded a milestone in the development of hydrogen combustion in gas turbines (use the top plot in Figure 5 to support your answer).</strong></p>
 <p><strong>7. Regarding emissions, discuss the advantages and disadvantages of increasing the hydrogen content of the fuel. Adjust PART A and use Figure 5.</strong></p>
-</div>
-<div class="section" id="bonus-assignment">
-<h3>Bonus assignment<a class="headerlink" href="#bonus-assignment" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="bonus-assignment">
+<h3>Bonus assignment<a class="headerlink" href="#bonus-assignment" title="Permalink to this headline">#</a></h3>
 <p><strong>For increase in hydrogen content of the fuel, describe the influence on the performance and cooling of the turbine. Assume the Mach number <span class="math notranslate nohighlight">\(M=1\)</span>.</strong></p>
 <!-- For simplicty, it was assumed that natural gas does consist of pure methane. In reality, it could be a mix of methane, higher hydrocarbons and nitrogen. <br>An example is Dutch Natural Gas (DNG), which consists of $80\%CH_4$, $5\%C_2H_6$ and $15\%N_2$. -->
-</div>
-</div>
-<div class="section" id="code">
-<h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">#</a></h2>
 <p>Two properties of importance in this assignment are the laminar flame speed <span class="math notranslate nohighlight">\(S_L\)</span> and the adiabtic flame temperature <span class="math notranslate nohighlight">\(T_{ad}\)</span> of a mixture. These properties can be determined by solving the equations for continuity, momentum, species and energy in one dimension. Fortunetaly, we do not need to solve these equations by hand, instead a chemical kinetics software (Cantera) is used to solve these equations by running a simulation. The simulation is illustrated in the sketch below. <strong>Keep in mind that the simulation can take some time to complete. It is also possible to copy the code below and paste and run it in Spyder</strong></p>
 <p>For more information about Cantera visit: https://cantera.org/. <br>
 For more background information regarding the 1D flame simulation visti: https://cantera.org/science/flames.html</p>
@@ -926,7 +1042,7 @@ For more background information regarding the 1D flame simulation visti: https:/
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1842</span><span class="o">/</span><span class="mf">522618814.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1906</span><span class="o">/</span><span class="mf">522618814.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#%% Load required packages</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">sys</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">cantera</span> <span class="k">as</span> <span class="nn">ct</span>
@@ -938,14 +1054,14 @@ For more background information regarding the 1D flame simulation visti: https:/
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "TU-Delft-3ME/turbomachinery",
+            repo: "tudelft-3me/turbomachinery",
             ref: "main",
         },
         codeMirrorConfig: {
@@ -963,9 +1079,11 @@ For more background information regarding the 1D flame simulation visti: https:/
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="assignment2.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -974,24 +1092,28 @@ For more background information regarding the 1D flame simulation visti: https:/
         </div>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Luuk Altenburg<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Luuk Altenburg<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
