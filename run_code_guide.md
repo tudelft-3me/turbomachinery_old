@@ -24,10 +24,10 @@ Install Anaconda and create environment (This only has to be done once):
     jupyter lab
     ```
 
-To start an assignment (assignment 1 is used in the following example):
+To start an assignment (assignment 3 is used in the following example):
 
-8. Download {download}`assignment1.ipynb <assignment1.ipynb>` (or use the download button at the top of the assingment page).
+8. Download {download}`assignment3.ipynb <assignment3.ipynb>` (or use the download button at the top of the assingment page).
 
-9. Navigate to the location on your PC where ``assignment1.ipynb`` is located and open the notebook.
+9. Navigate to the location on your PC where ``assignment3.ipynb`` is located and open the notebook.
 
 10. Good work, you are good to go! 
