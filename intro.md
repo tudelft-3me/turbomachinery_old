@@ -15,7 +15,7 @@ kernelspec:
 
 Dear Students,
 
-Welcome to the Mechanical Engineering Turbomachinery Course 2021/2022.
+Welcome to the Mechanical Engineering Turbomachinery Course 2022/2023.
 
 If you have any questions upfront, please contact me: s.a.klein@tudelft.nl.   
 
