@@ -454,8 +454,8 @@ Consider the simple Brayton cycle illustrated below. The inlet temperature <span
 <p>PR = 10 if (numpy.mod(studentID, 2) + 1) == 1<br>
 PR = 20 if (numpy.mod(studentID, 2) + 1) == 2</p>
 <p>Assume the TIT to be equal to the temperature of the flame inside the combustor. The flame temperature depends on the equivalence ratio (<span class="math notranslate nohighlight">\(\phi\)</span>), the hydrogen volume percentage of the fuel (<span class="math notranslate nohighlight">\(H_2\%\)</span>) and the combustor inlet temperature and pressure. For now consider the fuel to consist of pure natural gas (<span class="math notranslate nohighlight">\(H_2\%=0\)</span>). Note that the equivalence ratio is given by:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4f98222a-b620-46a7-adf0-49a124423031">
-<span class="eqno">(1)<a class="headerlink" href="#equation-4f98222a-b620-46a7-adf0-49a124423031" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bbc16dfc-5f61-4652-8947-fa1f2cfc0e9b">
+<span class="eqno">(1)<a class="headerlink" href="#equation-bbc16dfc-5f61-4652-8947-fa1f2cfc0e9b" title="Permalink to this equation">#</a></span>\[\begin{align}
 \phi = \frac{\frac{m_{fuel}}{m_{air}}}{(\frac{m_{fuel}}{m_{air}})_{stoich}} = \frac{\frac{n_{fuel}}{n_{air}}}{(\frac{n_{fuel}}{n_{air}})_{stoich}}
 \end{align}\]</div>
 <p>Furthermore, assume the mass flow to be constant throughout the cycle.</p>
@@ -620,7 +620,7 @@ For more background information regarding the 1D flame simulation visit: https:/
         
         <span class="c1"># Definition of the mixture</span>
         <span class="c1"># 1. Set the reaction mechanism</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">gas</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">Solution</span><span class="p">(</span><span class="s1">&#39;gri30.cti&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gas</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">Solution</span><span class="p">(</span><span class="s1">&#39;gri30.yaml&#39;</span><span class="p">)</span>
         
         <span class="c1"># 2. Define the fuel and air composition</span>
         <span class="n">fuel</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;H2&#39;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">f_H2</span><span class="p">,</span> <span class="s1">&#39;CH4&#39;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">f_CH4</span><span class="p">}</span>
@@ -694,7 +694,7 @@ For more background information regarding the 1D flame simulation visit: https:/
     <span class="sd">&quot;&quot;&quot; Returns the LHV and HHV for the specified fuel &quot;&quot;&quot;</span>
     <span class="n">T_u</span> <span class="o">=</span> <span class="mf">293.15</span>
     <span class="n">p_u</span> <span class="o">=</span> <span class="mi">101325</span>
-    <span class="n">gas1</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">Solution</span><span class="p">(</span><span class="s1">&#39;gri30.cti&#39;</span><span class="p">)</span>
+    <span class="n">gas1</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">Solution</span><span class="p">(</span><span class="s1">&#39;gri30.yaml&#39;</span><span class="p">)</span>
     <span class="n">gas1</span><span class="o">.</span><span class="n">TP</span> <span class="o">=</span> <span class="n">T_u</span><span class="p">,</span> <span class="n">p_u</span>
     <span class="n">gas1</span><span class="o">.</span><span class="n">set_equivalence_ratio</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">fuel</span><span class="p">,</span> <span class="s1">&#39;O2:1.0&#39;</span><span class="p">)</span>
     <span class="n">h1</span> <span class="o">=</span> <span class="n">gas1</span><span class="o">.</span><span class="n">enthalpy_mass</span>
@@ -1041,7 +1041,7 @@ For more background information regarding the 1D flame simulation visit: https:/
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1974</span><span class="o">/</span><span class="mf">522618814.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1957</span><span class="o">/</span><span class="mf">4178283039.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#%% Load required packages</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">sys</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">cantera</span> <span class="k">as</span> <span class="nn">ct</span>
