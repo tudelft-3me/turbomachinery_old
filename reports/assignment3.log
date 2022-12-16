@@ -22,7 +22,7 @@ print(f"Running Cantera Version: {ct.__version__}")
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m/tmp/ipykernel_1954/682762966.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_1959/682762966.py[0m in [0;36m<module>[0;34m[0m
 [0;32m----> 1[0;31m [0mprint[0m[0;34m([0m[0;34mf"Running Cantera Version: {ct.__version__}"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m
 [0;31mNameError[0m: name 'ct' is not defined
