@@ -454,8 +454,8 @@ Consider the simple Brayton cycle illustrated below. The inlet temperature <span
 <p>PR = 10 if (numpy.mod(studentID, 2) + 1) == 1<br>
 PR = 20 if (numpy.mod(studentID, 2) + 1) == 2</p>
 <p>Assume the TIT to be equal to the temperature of the flame inside the combustor. The flame temperature depends on the equivalence ratio (<span class="math notranslate nohighlight">\(\phi\)</span>), the hydrogen volume percentage of the fuel (<span class="math notranslate nohighlight">\(H_2\%\)</span>) and the combustor inlet temperature and pressure. For now consider the fuel to consist of pure natural gas (<span class="math notranslate nohighlight">\(H_2\%=0\)</span>). Note that the equivalence ratio is given by:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9a6f0a9c-af63-4f2d-931c-4fc0bcb7f7b9">
-<span class="eqno">(1)<a class="headerlink" href="#equation-9a6f0a9c-af63-4f2d-931c-4fc0bcb7f7b9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-28f3204f-75ae-4f95-8ead-9dac34c413b6">
+<span class="eqno">(1)<a class="headerlink" href="#equation-28f3204f-75ae-4f95-8ead-9dac34c413b6" title="Permalink to this equation">#</a></span>\[\begin{align}
 \phi = \frac{\frac{m_{fuel}}{m_{air}}}{(\frac{m_{fuel}}{m_{air}})_{stoich}} = \frac{\frac{n_{fuel}}{n_{air}}}{(\frac{n_{fuel}}{n_{air}})_{stoich}}
 \end{align}\]</div>
 <p>Furthermore, assume the mass flow to be constant throughout the cycle.</p>
@@ -504,6 +504,23 @@ For more background information regarding the 1D flame simulation visit: https:/
 <span class="n">colab_package_dir</span> <span class="o">=</span> <span class="s2">&quot;/usr/local/lib/python3.8/site-packages/&quot;</span>
 
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">colab_package_dir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Running Cantera Version: </span><span class="si">{</span><span class="n">ct</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1954</span><span class="o">/</span><span class="mf">682762966.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Running Cantera Version: </span><span class="si">{</span><span class="n">ct</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;ct&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1035,20 +1052,6 @@ For more background information regarding the 1D flame simulation visit: https:/
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mixture: phi=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">mixture</span><span class="o">.</span><span class="n">phi</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;, H2%=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">mixture</span><span class="o">.</span><span class="n">H2_percentage</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------&#39;</span><span class="p">)</span>
 <span class="c1">################# END PART D ##################</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1988</span><span class="o">/</span><span class="mf">4178283039.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#%% Load required packages</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">sys</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">cantera</span> <span class="k">as</span> <span class="nn">ct</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;cantera&#39;
 </pre></div>
 </div>
 </div>
